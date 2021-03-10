@@ -4,6 +4,8 @@ This simple script bakes a .cfg file for .png files in a directory for use in Re
 
 If you have a folder of .png bezels you have created or downloaded that is missing the required .cfg files needed by Retroarch, you can use this script to make those .cfg files with default settings.
 
+The script will not overwrite .cfg files already present, even if they are empty, and it will print out which files were generated or already found to be in the directory. 
+
 * Why did you make this?
 
 I was looking for bezels for my OdroidGo Super, which has a widescreen aspect ratio and plays mostly 4:3 games, and I noticed that almost all packs I found did not come with .cfg files. So, I looked at the preset bezel .cfg files that come with Retroarch and found they were all the same file, except for the filename they mention. I then took it upon myself to create this generator so I could use the packs of bezels I had found. To my surprise, everything worked!
@@ -14,6 +16,6 @@ If you want to submit improvements to the project, go ahead and make a pull requ
 
 * License
 
-This is licensed under the GPLv3. If you reuse this code, please mention my name (Brandon Hale). 
+This is licensed under the GPLv3. If you reuse this code, please mention my name (Brandon Hale). I take no liability for what may happen by using this script: _use at your own risk_. However, I have tested this script on my own computers, so let me know if anything bad happens and I will try to fix it.
 
 
