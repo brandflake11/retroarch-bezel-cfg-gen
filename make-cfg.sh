@@ -1,6 +1,6 @@
 #!/bin/bash                                                                     
 
-    # Retropie Airplane Mode scripts; allows for disabling and enabling wireless.
+    # retroarch-bezel-cfg-gen; Generator for .cfg files for retroarch bezels 
     # Copyright (C) 2021 Brandon Hale
 
     # This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,12 @@
     # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 for i in *.png; do                                                            
-    FILENAME="$(ls "$i" | sed 's/.png/.cfg/')"                         
+    FILENAME="$(ls "$i" | sed 's/.png/.cfg/')"
+    # If the .cfg file already exists, don't do this!
+    if [ -e $FILENAME ]
+    then
+	echo "$FILENAME found"
+    else
     echo "overlays = 1" >> $FILENAME
     echo >> $FILENAME               
     echo "overlay0_overlay = $i" >> $FILENAME 
@@ -25,6 +30,8 @@ for i in *.png; do
     echo "overlay0_full_screen = true" >> $FILENAME
     echo >> $FILENAME               
     echo "overlay0_descs = 0" >> $FILENAME
+    echo "$FILENAME generated"
+    fi
 done                                                                            
                                                                                 
                                        
