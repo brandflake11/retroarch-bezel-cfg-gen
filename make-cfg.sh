@@ -19,18 +19,18 @@
 for i in *.png; do                                                            
     FILENAME="$(ls "$i" | sed 's/.png/.cfg/')"
     # If the .cfg file already exists, don't do this!
-    if [ -e $FILENAME ]
+    if [ -e "$FILENAME" ]
     then
-	echo "$FILENAME found"
+	echo "\"$FILENAME\" found"
     else
-    echo "overlays = 1" >> $FILENAME
-    echo >> $FILENAME               
-    echo "overlay0_overlay = $i" >> $FILENAME 
-    echo >> $FILENAME               
-    echo "overlay0_full_screen = true" >> $FILENAME
-    echo >> $FILENAME               
-    echo "overlay0_descs = 0" >> $FILENAME
-    echo "$FILENAME generated"
+    echo "overlays = 1" >> "$FILENAME"
+    echo >> "$FILENAME"               
+    echo "overlay0_overlay = $i" >> "$FILENAME" 
+    echo >> "$FILENAME"               
+    echo "overlay0_full_screen = true" >> "$FILENAME"
+    echo >> "$FILENAME"               
+    echo "overlay0_descs = 0" >> "$FILENAME"
+    echo "\"$FILENAME\" generated"
     fi
 done                                                                            
                                                                                 
